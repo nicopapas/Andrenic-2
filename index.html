@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard administrativo de ventas y gestión de cofias para Andrenic">
+  <title>Andrenic - Dashboard de Ventas</title>
+  
+  <!-- Tipografía Google Fonts: Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Contenedor Principal en CSS Grid Layout -->
+  <div class="dashboard">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <img src="assets/logo/logo.png" alt="Logo corporativo de Andrenic" class="sidebar__logo">
+        <span class="sidebar__title">Andrenic</span>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Navegación principal">
+        <ul class="sidebar__menu">
+          <li class="sidebar__item">
+            <a href="#inicio" class="sidebar__link sidebar__link--active" aria-current="page">
+              <span class="sidebar__icon" aria-hidden="true">📊</span>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#ventas" class="sidebar__link">
+              <span class="sidebar__icon" aria-hidden="true">📈</span>
+              <span>Ventas</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#productos" class="sidebar__link">
+              <span class="sidebar__icon" aria-hidden="true">🩺</span>
+              <span>Productos</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#pedidos" class="sidebar__link">
+              <span class="sidebar__icon" aria-hidden="true">📦</span>
+              <span>Pedidos</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#clientes" class="sidebar__link">
+              <span class="sidebar__icon" aria-hidden="true">👥</span>
+              <span>Clientes</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#configuracion" class="sidebar__link">
+              <span class="sidebar__icon" aria-hidden="true">⚙️</span>
+              <span>Configuración</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- ENCABEZADO SUPERIOR (HEADER) -->
+    <header class="header">
+      <div class="header__left">
+        <button class="header__toggle" id="menuToggle" aria-label="Abrir o cerrar menú de navegación" aria-expanded="false" aria-controls="sidebar">
+          <span class="header__toggle-icon" aria-hidden="true">☰</span>
+        </button>
+        <div class="header__titles">
+          <h1 class="header__title">Dashboard de ventas</h1>
+          <p class="header__subtitle">Gestión comercial y control de inventario de cofias</p>
+        </div>
+      </div>
+
+      <div class="header__user">
+        <div class="header__avatar" aria-hidden="true">NC</div>
+        <div class="header__user-info">
+          <span class="header__user-name">Nicolas Cespedes</span>
+          <span class="header__user-role">Administrador</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (MAIN) -->
+    <main class="main" id="inicio">
+
+      <!-- TARJETAS DE RESUMEN -->
+      <section class="stats-section" aria-label="Resumen de indicadores clave">
+        <div class="stats-grid">
+          
+          <article class="card">
+            <div class="card__header">
+              <span class="card__title">Ventas del mes</span>
+              <span class="card__badge card__badge--success">+12%</span>
+            </div>
+            <div class="card__body">
+              <p class="card__value">$4.850.000</p>
+              <p class="card__desc">Comparado con el mes anterior</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__header">
+              <span class="card__title">Cofias vendidas</span>
+              <span class="card__badge card__badge--neutral">Unidades</span>
+            </div>
+            <div class="card__body">
+              <p class="card__value">286</p>
+              <p class="card__desc">Tallas S, M y L despachadas</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__header">
+              <span class="card__title">Pedidos</span>
+              <span class="card__badge card__badge--warning">Pendientes: 8</span>
+            </div>
+            <div class="card__body">
+              <p class="card__value">64</p>
+              <p class="card__desc">Órdenes procesadas este mes</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__header">
+              <span class="card__title">Stock disponible</span>
+              <span class="card__badge card__badge--info">Inventario</span>
+            </div>
+            <div class="card__body">
+              <p class="card__value">412</p>
+              <p class="card__desc">Total cofias en almacén</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECCIÓN GRÁFICO Y PRODUCTOS -->
+      <div class="dashboard__middle-grid">
+
+        <!-- Gráfico de ventas de barras CSS -->
+        <section class="panel" id="ventas">
+          <header class="panel__header">
+            <h2 class="panel__title">Rendimiento de Ventas 2026</h2>
+            <p class="panel__subtitle">Ingresos semestrales por venta de cofias (COP)</p>
+          </header>
+          
+          <div class="chart">
+            <div class="chart__row">
+              <span class="chart__label">Enero</span>
+              <div class="chart__bar-wrapper">
+                <div class="chart__bar" style="--width: 65%;" aria-label="Enero: 3.250.000 pesos"></div>
+              </div>
+              <span class="chart__value">$3.25M</span>
+            </div>
+
+            <div class="chart__row">
+              <span class="chart__label">Febrero</span>
+              <div class="chart__bar-wrapper">
+                <div class="chart__bar" style="--width: 78%;" aria-label="Febrero: 3.900.000 pesos"></div>
+              </div>
+              <span class="chart__value">$3.90M</span>
+            </div>
+
+            <div class="chart__row">
+              <span class="chart__label">Marzo</span>
+              <div class="chart__bar-wrapper">
+                <div class="chart__bar" style="--width: 85%;" aria-label="Marzo: 4.250.000 pesos"></div>
+              </div>
+              <span class="chart__value">$4.25M</span>
+            </div>
+
+            <div class="chart__row">
+              <span class="chart__label">Abril</span>
+              <div class="chart__bar-wrapper">
+                <div class="chart__bar" style="--width: 72%;" aria-label="Abril: 3.600.000 pesos"></div>
+              </div>
+              <span class="chart__value">$3.60M</span>
+            </div>
+
+            <div class="chart__row">
+              <span class="chart__label">Mayo</span>
+              <div class="chart__bar-wrapper">
+                <div class="chart__bar" style="--width: 95%;" aria-label="Mayo: 4.850.000 pesos"></div>
+              </div>
+              <span class="chart__value">$4.85M</span>
+            </div>
+
+            <div class="chart__row">
+              <span class="chart__label">Junio</span>
+              <div class="chart__bar-wrapper">
+                <div class="chart__bar" style="--width: 88%;" aria-label="Junio: 4.400.000 pesos"></div>
+              </div>
+              <span class="chart__value">$4.40M</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Listado de Productos -->
+        <section class="panel" id="productos">
+          <header class="panel__header">
+            <h2 class="panel__title">Catálogo de Cofias</h2>
+            <p class="panel__subtitle">Productos destacados por talla</p>
+          </header>
+
+          <div class="products-list">
+            
+            <article class="product-card">
+              <div class="product-card__info">
+                <h3 class="product-card__name">Cofia S</h3>
+                <p class="product-card__meta">Talla: <strong>S</strong> | Precio: <strong>$18.000</strong></p>
+                <p class="product-card__stock">Stock: 120 unidades</p>
+              </div>
+              <div class="product-card__actions">
+                <span class="status-tag status-tag--success">Disponible</span>
+                <button type="button" class="btn btn--secondary">Ver producto</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__info">
+                <h3 class="product-card__name">Cofia M</h3>
+                <p class="product-card__meta">Talla: <strong>M</strong> | Precio: <strong>$18.000</strong></p>
+                <p class="product-card__stock">Stock: 245 unidades</p>
+              </div>
+              <div class="product-card__actions">
+                <span class="status-tag status-tag--success">Disponible</span>
+                <button type="button" class="btn btn--secondary">Ver producto</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-card__info">
+                <h3 class="product-card__name">Cofia L</h3>
+                <p class="product-card__meta">Talla: <strong>L</strong> | Precio: <strong>$20.000</strong></p>
+                <p class="product-card__stock">Stock: 47 unidades</p>
+              </div>
+              <div class="product-card__actions">
+                <span class="status-tag status-tag--warning">Stock bajo</span>
+                <button type="button" class="btn btn--secondary">Ver producto</button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SECCIÓN TABLA Y FORMULARIO EN GRID -->
+      <div class="dashboard__bottom-grid">
+
+        <!-- Tabla de Ventas Recientes -->
+        <section class="panel panel--full" id="pedidos">
+          <header class="panel__header">
+            <h2 class="panel__title">Últimas Ventas Registradas</h2>
+            <p class="panel__subtitle">Detalle de transacciones de cofias</p>
+          </header>
+
+          <div class="table-container" tabindex="0" aria-label="Tabla desplazable de ventas recientes">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Cliente</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Talla</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ana Pérez</td>
+                  <td>Cofia</td>
+                  <td>M</td>
+                  <td>3</td>
+                  <td>02/09/2026</td>
+                  <td><span class="status-tag status-tag--success">Completado</span></td>
+                </tr>
+                <tr>
+                  <td>Carlos Gómez</td>
+                  <td>Cofia</td>
+                  <td>L</td>
+                  <td>2</td>
+                  <td>03/09/2026</td>
+                  <td><span class="status-tag status-tag--warning">Pendiente</span></td>
+                </tr>
+                <tr>
+                  <td>Clínica Central</td>
+                  <td>Cofia</td>
+                  <td>S</td>
+                  <td>50</td>
+                  <td>04/09/2026</td>
+                  <td><span class="status-tag status-tag--success">Completado</span></td>
+                </tr>
+                <tr>
+                  <td>María Rodríguez</td>
+                  <td>Cofia</td>
+                  <td>M</td>
+                  <td>1</td>
+                  <td>05/09/2026</td>
+                  <td><span class="status-tag status-tag--danger">Cancelado</span></td>
+                </tr>
+                <tr>
+                  <td>Hospital Norte</td>
+                  <td>Cofia</td>
+                  <td>L</td>
+                  <td>30</td>
+                  <td>06/09/2026</td>
+                  <td><span class="status-tag status-tag--warning">Pendiente</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Formulario de Solicitud / Pedido -->
+        <section class="panel" id="formulario">
+          <header class="panel__header">
+            <h2 class="panel__title">Solicitar Pedido</h2>
+            <p class="panel__subtitle">Registro directo de pedidos institucionales</p>
+          </header>
+
+          <form class="order-form" onsubmit="event.preventDefault();">
+            <div class="form-group">
+              <label for="nombreCliente" class="form-group__label">Nombre completo</label>
+              <input type="text" id="nombreCliente" name="nombre" class="form-group__input" placeholder="Ej. Dra. Laura Restrepo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="correoCliente" class="form-group__label">Correo electrónico</label>
+              <input type="email" id="correoCliente" name="correo" class="form-group__input" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="tallaCofia" class="form-group__label">Talla</label>
+                <select id="tallaCofia" name="talla" class="form-group__select" required>
+                  <option value="">Seleccione...</option>
+                  <option value="S">Talla S</option>
+                  <option value="M">Talla M</option>
+                  <option value="L">Talla L</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cantidadCofia" class="form-group__label">Cantidad</label>
+                <input type="number" id="cantidadCofia" name="cantidad" min="1" class="form-group__input" placeholder="1" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="mensajeCliente" class="form-group__label">Mensaje o especificaciones</label>
+              <textarea id="mensajeCliente" name="mensaje" class="form-group__textarea" rows="3" placeholder="Detalles de entrega o requerimientos adicionales..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Enviar solicitud</button>
+          </form>
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__brand"><strong>Andrenic</strong> - Venta de cofias y productos para profesionales de la salud.</p>
+        <p class="footer__copy">&copy; 2026 Andrenic | Desarrollado por <strong>Nicolas Cespedes</strong></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
